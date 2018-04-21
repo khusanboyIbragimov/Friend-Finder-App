@@ -7,14 +7,12 @@ module.exports = function (app) {
     res.json(users)
   })
  
-
   app.post("/api/friends", function (req, res) {
     newUser = req.body;
     res.json(bestMatch([newUser], users))
     users.push(newUser);
     
   })
-
  
   function compare(arr1, arr2) {
     var sum = 0;
